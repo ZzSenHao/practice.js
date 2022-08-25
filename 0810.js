@@ -133,6 +133,108 @@ else{console.log('age<18');
 alert('teenager');}
 
 
+//for循环
+var x=0;
+var i;
+for (i=1;i<=10000;i++){
+    x=x+i;
+}
+x;//i=1是初始条件，将变量i设为1
+  //i<=10000设定循环条件
+  //i++ 循环的递增条件
+
+
+
+var x=1;
+var i;
+for (i=1;i<=10;i++)
+{x=x*i;}
+x;//等于3628800
+
+
+//break用来跳出循环。
+var x=0;
+for (;;){
+    if (x>100){
+        break;
+    }
+    x++;
+}//break用来跳出循环。
+
+
+
+// hasOwnProperty用来过滤掉对象继承的属性
+var o={
+    name='jack',
+    age:20,
+    city:'beijing'
+};
+for (var key in o){
+    if (o.hasOwnProperty(key)){
+        console.log(key); //输出'name','age','city'
+    }
+}
+
+
+
+
+//for in循环可以直接循环出数列的索引
+var a=['a','b','c'];
+for (var i in a){
+    console.log(i);//'0','1','2'
+    console.log(a[i]);//'a','b','c'
+}
+
+
+
+//while循环，while循环只有一个判断条件，条件满足就循环，条件不满足时则跳出循环。
+var x=0;
+var n=99;
+while (n>0){
+    x=x+n;
+    n=n-2;
+}
+x;//输出2500,计算一百以内所有的奇数之和
+
+
+//do{...}while()循环
+var n=0;
+do{
+    n=n+1;
+}while(n<100);
+n;//输出100，
+
+
+//Map和Set
+//Map即键名：键值。一个key只能对应一个value，如果多次对一个key放入value，后面的值会将前面的值冲掉。
+var s1=new Map([['name','小明'],['age',20],['sex','男']]);
+s1.get('sex');//输出男
+s1.set('adam',67);//添加新的key-value
+s1.has('adam');//输出true，查询是否存在键名
+s1.set('adam',88);//将adam的值更改为88
+s1.get('adam');//输出88
+s1.delete('adam');//删除key：adam
+
+//Set不存储value，在set中，不存在重复的key。
+var s2=new Set([1,2,3]);
+s2;//输出1,2,3
+//重复元素在Set中自动被过滤掉：
+var s=new Set([1,2,3,3,'3']);
+s;//输出1,2,3，’3‘   重复的3被过滤，’3‘是字符
+s.add(4);//add(key)可以添加元素到Set中，可以重复添加，但不会有效果
+s;//输出{1,2,3，'3',4}
+s.delete(2);//delete（key）删除对应键名
+s;//输出{1,3，’3‘，4}
+
+var a=['A','B','C'];
+a.name='hello';
+for (var x of a){
+    console.log(x);
+}
+
+
+
+
 
 
 
